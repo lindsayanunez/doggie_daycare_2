@@ -33,6 +33,7 @@ group :development do
   gem 'starter_generators'
   gem 'faker'
   gem 'populator'
+  gem 'quiet_assets'
 end
 
 # Use ActiveModel has_secure_password

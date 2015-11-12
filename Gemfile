@@ -27,6 +27,7 @@ gem 'thin'
 gem 'awesome_print'
 gem 'annotate'
 gem 'stamp'
+gem "paperclip", "~> 4.3"
 
 
 group :development do

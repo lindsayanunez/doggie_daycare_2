@@ -29,7 +29,7 @@
 </p>
 
 <p>
-<%= image_tag @dog.avatar.url %>
+<%= image_tag @dog.avatar.url(:medium) %>
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |

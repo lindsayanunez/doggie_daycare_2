@@ -14,23 +14,28 @@
 </p>
 
 <p>
-  <strong>Med cond:</strong>
+  <strong>Medical Conditions:</strong>
   <%= @dog.med_cond %>
 </p>
 
 <p>
-  <strong>Vet:</strong>
+  <strong>Vetrinarian:</strong>
   <%= @dog.vet %>
 </p>
 
 <p>
-  <strong>Dob:</strong>
+  <strong>Date of Birth:</strong>
   <%= @dog.dob %>
 </p>
 
 <p>
-<%= image_tag @dog.avatar.url(:medium) %>
+<strong>In Daycare</strong>
+<%= @dog.in_daycare %>
 </p>
 
-<%= link_to fa_icon('icon-edit', text: 'Edit'), edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<p>
+<%= image_tag @dog.avatar.url(:medium), class: 'img-rounded' %>
+</p>
+
+<%= link_to fa_icon('edit', text: 'Edit'), edit_dog_path(@dog),class: 'btn btn-primary btn-sm' %>
+<%= link_to fa_icon('chevron-left', text:'Back'), dogs_path,class: 'btn btn-primary btn-sm' %>

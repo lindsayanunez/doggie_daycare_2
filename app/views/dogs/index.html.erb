@@ -6,15 +6,15 @@
 
 <div class="col-sm-4 col-md-3">
 
- <div class="panel panel-default">
+ <div class="panel panel-default <%= dog.in_daycare ? 'panel-success' : 'panel-default'%>">
    <div class="panel-heading">
      <h3 class="panel-title"><%= dog.name %> <%= dog.owner.try(:last_name) %></h3>
    </div>
    <div class="panel-body">
       <%= image_tag dog.avatar.url(:medium), class: 'img-responsive img-rounded'%>
       <p>
-       <%= link_to fa_icon('eye', text: 'Show'), dog, class: 'btn btn-default btn-xs' %>
-       <%= link_to fa_icon('icon-edit', text: 'Edit'), edit_dog_path(dog), class: 'btn btn-default btn-xs'%>
+       <%= link_to fa_icon('eye', text: 'View'), dog, class: 'btn btn-primary btn-xs' %>
+       <%= link_to fa_icon('edit', text: 'Edit'), edit_dog_path(dog), class: 'btn btn-primary btn-xs'%>
 
      </p>
    </div>

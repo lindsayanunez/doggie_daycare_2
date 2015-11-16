@@ -13,6 +13,16 @@
    <div class="panel-body">
       <%= image_tag dog.avatar.url(:medium), class: 'img-responsive img-rounded'%>
       <p>
+       <!-- Check in/out buttons -->
+           <%= form_for(dog, url: dog_path(dog), html: {class: 'form-inline'}) do |f| %>
+             <% if dog.in_daycare %>
+               <%= f.hidden_field :in_daycare, value: false %>
+               <%= f.submit "Check Out", class: 'btn btn-primary btn-xs' %>
+             <% else %>
+               <%= f.hidden_field :in_daycare, value: true %>
+               <%= f.submit "Check In", class: 'btn btn-default btn-xs' %>
+             <% end %>
+           <% end %>
        <%= link_to fa_icon('eye', text: 'View'), dog, class: 'btn btn-primary btn-xs' %>
        <%= link_to fa_icon('edit', text: 'Edit'), edit_dog_path(dog), class: 'btn btn-primary btn-xs'%>
 

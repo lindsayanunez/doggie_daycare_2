@@ -1,12 +1,12 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
-  before_action :all_breeds, only: [:new, :edit]
+  before_action :all_breeds, only: [:new, :edit, :index]
   before_action :all_owners, only: [:news, :edit]
 
   # GET /dogs
   # GET /dogs.json
   def index
-# if we have the parameter, then only give me dogs that match
+   # if we have the parameter, then only give me dogs that match
    if params[:search]
      @dogs = Dog.where("name LIKE ?", "%#{params[:search]}%")
      # if no dogs returns, give error message and list all dogs
@@ -14,6 +14,8 @@ class DogsController < ApplicationController
        flash[:notice] = "Sorry, no result found."
        @dogs = Dog.all
      end
+   elsif params[:breed_id]
+     @dogs = Dog.where(breed_id: params[:breed_id])
    # else, give me all dogs
    else
      @dogs = Dog.all

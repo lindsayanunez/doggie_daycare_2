@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+    # Default URL for action mailer
+  # TODO: Change this to the real host once we know it
+  # config.action_mailer.default_url_options = { host: 'CHANGEME' }
 end

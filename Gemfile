@@ -29,6 +29,7 @@ gem 'annotate'
 gem 'stamp'
 gem "paperclip", "~> 4.3"
 gem 'font-awesome-rails'
+gem 'devise'
 
 
 group :development do
